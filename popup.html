@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focuzd - Focus Time</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="settings-icon" id="settingsButton">
+        <i class="fas fa-cog"></i>
+      </div>
+      <h1>Focuzd</h1>
+      <div class="close-icon" id="closeButton">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+
+    <div class="timer-container" id="timerContainer">
+      <h2 id="sessionType">Focus Time</h2>
+      <div class="timer-circle" id="timerCircle">
+        <span id="timeDisplay">25:00</span>
+        <span id="cycleDisplay">- 1 -</span>
+      </div>
+
+      <div class="controls">
+        <button id="playButton" class="control-button">
+          <i class="fas fa-play"></i>
+        </button>
+        <div class="cycles">
+          <span id="currentCycle">1</span>/<span id="totalCycles">4</span>
+        </div>
+        <button id="resetButton" class="control-button">
+          <i class="fas fa-redo-alt"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="settings-container hidden" id="settingsContainer">
+      <div class="back-header">
+        <div class="back-button" id="backButton">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+        <h2>Settings</h2>
+        <div class="placeholder"></div>
+      </div>
+
+      <div class="setting-item">
+        <h3>Focus Time</h3>
+        <div class="setting-control">
+          <button class="decrement" data-setting="focusTime">
+            <i class="fas fa-minus"></i>
+          </button>
+          <div>
+            <span id="focusTimeValue">25</span>
+            <span class="unit">Minutes</span>
+          </div>
+          <button class="increment" data-setting="focusTime">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <h3>Break Time</h3>
+        <div class="setting-control">
+          <button class="decrement" data-setting="breakTime">
+            <i class="fas fa-minus"></i>
+          </button>
+          <div>
+            <span id="breakTimeValue">5</span>
+            <span class="unit">Minutes</span>
+          </div>
+          <button class="increment" data-setting="breakTime">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <h3>Long Break Time</h3>
+        <div class="setting-control">
+          <button class="decrement" data-setting="longBreakTime">
+            <i class="fas fa-minus"></i>
+          </button>
+          <div>
+            <span id="longBreakTimeValue">15</span>
+            <span class="unit">Minutes</span>
+          </div>
+          <button class="increment" data-setting="longBreakTime">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <h3>Cycles Before Long Break</h3>
+        <div class="setting-control">
+          <button class="decrement" data-setting="cyclesCount">
+            <i class="fas fa-minus"></i>
+          </button>
+          <div>
+            <span id="cyclesCountValue">4</span>
+            <span class="unit">Cycles</span>
+          </div>
+          <button class="increment" data-setting="cyclesCount">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <h3>Notification Message</h3>
+        <input type="text" id="notificationMessage" placeholder="Time to take a break!" class="notification-input">
+      </div>
+
+      <div class="setting-item">
+        <h3>Theme</h3>
+        <div class="theme-selector">
+          <button id="lightTheme" class="theme-button light-theme">Light</button>
+          <button id="darkTheme" class="theme-button dark-theme">Dark</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <h3>Font Size</h3>
+        <div class="setting-control">
+          <button class="decrement" data-setting="fontSize">
+            <i class="fas fa-minus"></i>
+          </button>
+          <div>
+            <span id="fontSizeValue">16</span>
+            <span class="unit">px</span>
+          </div>
+          <button class="increment" data-setting="fontSize">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <h3>Font Family</h3>
+        <select id="fontFamily" class="font-select">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="'Courier New', monospace">Courier New</option>
+          <option value="'Times New Roman', serif">Times New Roman</option>
+          <option value="'Roboto', sans-serif">Roboto</option>
+          <option value="'Open Sans', sans-serif">Open Sans</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
